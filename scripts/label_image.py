@@ -140,22 +140,19 @@ if __name__ == "__main__":
   labels = load_labels(label_file)
 
   best_score=1
-  a=1
+  
   source='C:\\Users\\vrh\\Desktop\\staz\\tensorflow-for-poets-2\\tf_files\\photos\\'
   dest='C:\\Users\\vrh\\Desktop\\staz\\tensorflow-for-poets-2\\tf_files\\face_photos\\'
   
     
   for i in top_k:
     best_score=results[i]
-  if best_score<0.45:
+  if best_score<0.95:
     print("")
     print('Not recognized')
-   # password ='1234'
-    #while a==1:
-      #pin = input('Write a password: ')
-      #if pin ==password:
-        #a=2
-        #imie=input('Write your name: ')
+
+    
+      
         #dest+=imie
         #files = os.listdir(source)
         #for f in files:
@@ -173,18 +170,23 @@ if __name__ == "__main__":
          #--architecture="'+os.environ.get('ARCHITECTURE')+'" \
          #--image_dir=tf_files/face_photos')
 
-      #else:
-       # print('Wrong password,try again')
+      
   else:
   
   
-      #a=2
+      
 		# print('\nEvaluation time (1-image): {:.3f}s\n'.format(end-start))
-      template = "Witaj {} (rozpoznano z prawdopodobienstwem {:0.5f})"
+      template = "{};{:0.5f};"
 	 
       for i in top_k:
         print("")
-        print(template.format(labels[i], results[i]))
+        if labels[i]=='maciej':
+          print(template.format(labels[i], results[i])+"0;0;10")
+
+        elif labels[i]=='filip':
+          print(template.format(labels[i], results[i])+"0;10;0")
+        else:
+          print('Not recognized')
 
   
  

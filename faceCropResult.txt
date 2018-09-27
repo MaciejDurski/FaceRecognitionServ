@@ -1,0 +1,2 @@
+Processing images in folder: C:\Users\vrh\IdeaProjects\demo\tf_files\PHOTO_FROM_APP
+ 1 files have been cropped
